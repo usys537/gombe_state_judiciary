@@ -24,13 +24,35 @@
 					<ul class="nav">
 						<li class="active">
 							<%= link_to "Home", root_path %>
+						</li>						
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">You and the Judiciary
+							<b class="caret"></b>
+							</a>							
+							<ul class="dropdown-menu">
+								<li><%= link_to "Going to Court", page_path("you-and-the-judiciary/going-to-court")%></li>
+								<li><%= link_to "Sentencing", page_path("you-and-the-judiciary/sentencing")%></li>
+								<li><%= link_to "Appeal Process", page_path("you-and-the-judiciary/appeal-process")%></li>
+								<li><%= link_to "Judiciary Members", page_path("you-and-the-judiciary/judiciary-members")%></li>
+								<li><%= link_to "Civil Litigation Cost", page_path("you-and-the-judiciary/civil-litigation-cost")%></li>
+								<li><%= link_to "Forms", page_path("you-and-the-judiciary/forms")%></li>
+							</ul>
 						</li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Publications
 							<b class="caret"></b>
 							</a>							
 							<ul class="dropdown-menu">
-								<li><%= link_to "Reports", page_path("Publications/Reports")%></li>
+								<li><%= link_to "Reports", page_path("Publications/reports")%></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Media
+							<b class="caret"></b>
+							</a>							
+							<ul class="dropdown-menu">
+								<li><%= link_to "Images", page_path("media/images")%></li>
+								<li><%= link_to "Media Releases", page_path("media/media-releases")%></li>
 							</ul>
 						</li>
 						<li class="dropdown">
@@ -40,23 +62,7 @@
 							<ul class="dropdown-menu">
 								<li><%= link_to "Judicial College", page_path("training/judicial-college")%></li>
 							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Media
-							<b class="caret"></b>
-							</a>							
-							<ul class="dropdown-menu">
-								<li><%= link_to "Images", page_path("media/images")%></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">You and the Judiciary
-							<b class="caret"></b>
-							</a>							
-							<ul class="dropdown-menu">
-								<li><%= link_to "Going to Court", page_path("you and the judiciary/going-to-court")%></li>
-							</ul>
-						</li>
+						</li>						
 					</ul>
 				</div>
 			</div>
