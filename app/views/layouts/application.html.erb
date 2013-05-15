@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="navbar navbar-static-top">
+	<div class="navbar navbar-fixed-top navbar-inverse">
 		<div class="navbar-inner">
 			<div class="container">
 				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -19,16 +19,54 @@
 
 				<a class="brand" href="/">Gombe State Judiciary</a>
 
+				
 				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li class="active">
+							<%= link_to "Home", root_path %>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Publications
+							<b class="caret"></b>
+							</a>							
+							<ul class="dropdown-menu">
+								<li><%= link_to "Reports", page_path("Publications/Reports")%></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Training
+							<b class="caret"></b>
+							</a>							
+							<ul class="dropdown-menu">
+								<li><%= link_to "Judicial College", page_path("training/judicial-college")%></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Media
+							<b class="caret"></b>
+							</a>							
+							<ul class="dropdown-menu">
+								<li><%= link_to "Images", page_path("media/images")%></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">You and the Judiciary
+							<b class="caret"></b>
+							</a>							
+							<ul class="dropdown-menu">
+								<li><%= link_to "Going to Court", page_path("you and the judiciary/going-to-court")%></li>
+							</ul>
+						</li>
+					</ul>
 				</div>
-
 			</div>
 		</div>
 	</div>
 	<div class="container">
 	<%= yield %>
 	</div>
-
-
+	<hr>
+	<footer class="footer">
+	</footer>
 </body>
 </html>
