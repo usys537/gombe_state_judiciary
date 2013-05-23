@@ -1,5 +1,7 @@
 Gombestatejudiciary::Application.routes.draw do
 
+  devise_for :users
+
   root to: 'home#index'
   get 'pages/about-us' => 'high_voltage/pages#show', :id => 'about-us'
   

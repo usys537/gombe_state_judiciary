@@ -33,17 +33,9 @@
 								<li><%= link_to "Going to Court", page_path("you-and-the-judiciary/going-to-court")%></li>
 								<li><%= link_to "Sentencing", page_path("you-and-the-judiciary/sentencing")%></li>
 								<li><%= link_to "Appeal Process", page_path("you-and-the-judiciary/appeal-process")%></li>
-								<li><%= link_to "Judiciary Members", page_path("you-and-the-judiciary/judiciary-members")%></li>
+								<li><%= link_to "State Judiciary staffs", page_path("you-and-the-judiciary/state-judiciary-staffs")%></li>
 								<li><%= link_to "Civil Litigation Cost", page_path("you-and-the-judiciary/civil-litigation-cost")%></li>
 								<li><%= link_to "Forms", page_path("you-and-the-judiciary/forms")%></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Publications
-							<b class="caret"></b>
-							</a>							
-							<ul class="dropdown-menu">
-								<li><%= link_to "Reports", page_path("Publications/reports")%></li>
 							</ul>
 						</li>
 						<li class="dropdown">
@@ -55,6 +47,14 @@
 								<li><%= link_to "Media Releases", page_path("media/media-releases")%></li>
 							</ul>
 						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Publications
+							<b class="caret"></b>
+							</a>							
+							<ul class="dropdown-menu">
+								<li><%= link_to "Reports", page_path("Publications/reports")%></li>
+							</ul>
+						</li>						
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Training
 							<b class="caret"></b>
@@ -69,10 +69,19 @@
 		</div>
 	</div>
 	<div class="container">
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
 	<%= yield %>
 	</div>
 	<hr>
 	<footer class="footer">
+		<div class="container">
+			<p class="muted credit">"Designed and built by "
+				<a href="#" target="_blank">Usman Shamaki</a>
+				"and "
+				<a href="#">Shamsky</a> "."
+			</p>
+		</div>
 	</footer>
 </body>
 </html>
