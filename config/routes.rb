@@ -2,8 +2,14 @@ Gombestatejudiciary::Application.routes.draw do
 
   devise_for :users
 
+  mount Forem::Engine, :at => "/forums"
   root to: 'home#index'
   get 'pages/about-us' => 'high_voltage/pages#show', :id => 'about-us'
+
+  resources :users 
+  match 'users/:id', :to => "users#show", :as => :user 
+
+  
   
 
   # The priority is based upon order of creation:
