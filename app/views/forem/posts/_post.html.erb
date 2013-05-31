@@ -4,7 +4,7 @@
   <div class="well well-small">
     <div class='user'>
       <div class='username'>
-        <%= link_to_if Forem.user_profile_links, post.user.profile_name, [main_app, post.user] %>
+        <%= link_to_if Forem.user_profile_links, post.user, [main_app, post.user] %>
       </div>
       <div class='icon'><%= forem_avatar(post.user, :size => 60) %></div>
     </div>
@@ -34,7 +34,7 @@
 
       <% if post.reply_to %>
         <span class='in_reply_to'>
-          <%= link_to "#{t("forem.post.in_reply_to")} #{post.reply_to.user.profile_name}", "#post-#{post.reply_to.id}" %>
+          <%= link_to "#{t("forem.post.in_reply_to")} #{post.reply_to.user}", "#post-#{post.reply_to.id}" %>
         </span>
       <% end %>
 
