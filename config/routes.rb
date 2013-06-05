@@ -6,9 +6,11 @@ Gombestatejudiciary::Application.routes.draw do
   root to: 'home#index'
   get 'pages/about-us' => 'high_voltage/pages#show', :id => 'about-us'
 
+  
   resources :users 
   match 'users/:id', :to => "users#show", :as => :user 
 
+  get '/auth/:provider/callback', to: 'sessions#create'
   
   
 
