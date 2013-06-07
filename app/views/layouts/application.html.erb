@@ -69,14 +69,14 @@
 					<ul  class="nav pull-right">
 							<% if user_signed_in? %>
 								<li><%= link_to current_user.profile_name, main_app.edit_user_registration_path %></li>
-								<li><%= link_to "Log Out", main_app.destroy_user_session_path, method: :delete %></li>
+								<li><%= link_to "Log Out", main_app.logout_path %></li>
 								<li><% if current_user.forem_admin %>
 								           <%= link_to "Administrate", forem.admin_root_url %>
 								    <% end %>
 								</li>
 							<% else %>
-								<li><%= link_to "Register", main_app.new_user_registration_path %></li>
-								<li><%= link_to "Log In", main_app.new_user_session_path %></li>							
+								<li><%= link_to "Register", main_app.register_path %></li>
+								<li><%= link_to "Log In", main_app.login_path %></li>							
 							<% end %>
           		    </ul>
 				</div>				
@@ -84,6 +84,7 @@
 		</div>
 	</div>
 	<div class="container">
+		
 		<% if flash[:notice] %>
 			<div class="alert alert-success">
 				<button type="button" class="close" data-dismiss="alert">&times;</button>
