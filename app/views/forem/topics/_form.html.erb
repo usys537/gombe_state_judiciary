@@ -1,9 +1,18 @@
-<%= simple_form_for [forem, @forum, @topic] do |f| %>
-  <%= f.input :subject %>
+<div class="row">
+	<div class="span6">
+		<%= simple_form_for [forem, @forum, @topic], html: {class: "well"} do |f| %>
+		<fieldset>
+			<%= f.input :subject %>
 
-  <%= f.simple_fields_for :posts do |post| %>
-    <%= render :partial => "forem/posts/form", :locals => { :f => post }%>
-  <% end %>
-  
-  <%= f.submit %>
-<% end %>
+		 	<%= f.simple_fields_for :posts do |post| %>
+		    <%= render :partial => "forem/posts/form", :locals => { :f => post }%>
+		    <% end %>
+		  
+		    <%= f.button :submit %>
+		</fieldset>
+		  
+		<% end %>
+
+	</div>
+</div>
+		

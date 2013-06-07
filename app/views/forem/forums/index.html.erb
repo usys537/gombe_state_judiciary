@@ -1,5 +1,5 @@
 <div id='forums_container'>
-  <h1 id='forums_title'><%= t('.title') %></h1>
+  <legend><h1 id='forums_title'><%= t('.title') %></h1></legend>
 
   <%= render @categories %>
 </div>
@@ -7,6 +7,6 @@
 <br>
 <footer id='admin_link'>
   <% if forem_admin? %>
-    <%= link_to t("area", :scope => "forem.admin"), forem.admin_root_path %>
+   <div class="btn"><%= link_to t("area", :scope => "forem.admin"), forem.admin_root_path %></div> 
   <% end %>
 </footer>

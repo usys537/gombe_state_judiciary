@@ -1,7 +1,8 @@
-<h2><%= t('forem.admin.group.index') %></h2>
-<%= link_to t('forem.admin.group.new'), forem.new_admin_group_path %>
+<legend><h3><%= t('forem.admin.group.index') %></h3>
+</legend>
+<div class="btn"><%= link_to t('forem.admin.group.new'), forem.new_admin_group_path %></div> <br /> <br />
 
-<table id='groups' class='index subdued' cellspacing='0'>
+<table id='groups' class='table table-bordered table-hover' cellspacing='0'>
   <thead>
     <tr>
       <th><%= t('edit', :scope => 'forem.admin.groups') %></th>

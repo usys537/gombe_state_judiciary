@@ -2,7 +2,12 @@
 
 <h2><%= t("forem.post.edit") %></h2>
 
-<%= simple_form_for [forem, @topic, @post] do |f| %>
-  <%= render :partial => "form", :locals => { :f => f } %>
-  <%= f.submit t("forem.post.buttons.edit") %>
-<% end %>
+<div class="row">
+	<div class="span6">
+		<%= simple_form_for [forem, @topic, @post], html: { class: "well" } do |f| %>
+ 			 <%= render :partial => "form", :locals => { :f => f } %>
+  			<%= f.button :submit, t("forem.post.buttons.edit") %>
+		<% end %>
+	</div>
+</div>
+

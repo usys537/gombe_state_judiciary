@@ -2,26 +2,30 @@
   <%= render :partial => 'forem/topics/head', :locals => { :topic => @topic } %>
 
   <menu>
-    <% if @topic.can_be_replied_to? && can?(:reply, @topic) %>
-      <%= link_to t(".reply"), forem.new_topic_post_path(@topic) %>
-    <% end %>
-    <% if @topic.user == forem_user || forem_admin? %>
-      <%= link_to t(".delete"), forem.forum_topic_path(@forum, @topic), :method => :delete, :confirm => t("are_you_sure") %>
-    <% end %>
-    <% if forem_user %>
-      <% if !@topic.subscriber?(forem_user.id) %>
-        <%= link_to t(".subscribe"), forem.subscribe_forum_topic_path(@forum, @topic) %>
-      <% else %>
-        <%= link_to t(".unsubscribe"), forem.unsubscribe_forum_topic_path(@forum, @topic) %>
-      <% end %>
-    <% end %>
+    <div class="row">
+      <div class="span12">      
+        <% if @topic.can_be_replied_to? && can?(:reply, @topic) %>
+          <li class="btn"><%= link_to t(".reply"), forem.new_topic_post_path(@topic) %></li>
+        <% end %>
+        <% if @topic.user == forem_user || forem_admin? %>
+          <li class="btn"><%= link_to t(".delete"), forem.forum_topic_path(@forum, @topic), :method => :delete, :confirm => t("are_you_sure") %></li> 
+        <% end %>
+        <% if forem_user %>
+          <li class="btn"><% if !@topic.subscriber?(forem_user.id) %>
+            <%= link_to t(".subscribe"), forem.subscribe_forum_topic_path(@forum, @topic) %></li> 
+          <% else %>
+            <li class="btn"><%= link_to t(".unsubscribe"), forem.unsubscribe_forum_topic_path(@forum, @topic) %></li> 
+          <% end %>
+        <% end %>
+     </div>
+    </div>
   </menu>
 
   <% if forem_admin? %>
-    <%= link_to t(".hide.#{@topic.hidden}"), forem.toggle_hide_admin_topic_path(@topic), :method => :put %> |
-    <%= link_to t(".lock.#{@topic.locked}"), forem.toggle_lock_admin_topic_path(@topic), :method => :put %> |
-    <%= link_to t(".pin.#{@topic.pinned}"), forem.toggle_pin_admin_topic_path(@topic), :method => :put %>
-  <% end %>
+    <li class="btn"><%= link_to t(".hide.#{@topic.hidden}"), forem.toggle_hide_admin_topic_path(@topic), :method => :put %> |</li>
+    <li class="btn"><%= link_to t(".lock.#{@topic.locked}"), forem.toggle_lock_admin_topic_path(@topic), :method => :put %> |</li>
+    <li class="btn"><%= link_to t(".pin.#{@topic.pinned}"), forem.toggle_pin_admin_topic_path(@topic), :method => :put %></li> 
+  <% end %> 
 
   <% if @topic.pending_review? %>
     <div class="moderation" id='topic_moderation'>

@@ -1,4 +1,8 @@
-<%= simple_form_for [forem, :admin, @category] do |f| %>
-  <%= f.input :name %>
-  <%= f.submit %>
-<% end %>
+<div class="row">
+	<div class="span4">
+		<%= simple_form_for [forem, :admin, @category], html: { class: "well" } do |f| %>
+		  <%= f.input :name %>
+		  <%= f.button :submit %>
+		<% end %>
+	</div>
+</div>

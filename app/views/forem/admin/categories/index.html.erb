@@ -1,8 +1,8 @@
-<h2><%= t("forem.admin.category.index") %></h2>
+<legend><%= t("forem.admin.category.index") %></legend> 
 
-<%= link_to t("forem.admin.category.new_link"), forem.new_admin_category_path %>
+<div class="btn"><%= link_to t("forem.admin.category.new_link"), forem.new_admin_category_path %></div> <br /> <br />
 
-<table id='forums' class='forums subdued' cellspacing='0'>
+<table id='forums' class='table table-hover table-bordered' cellspacing='0'>
   <thead>
     <tr>
       <th><%= t('edit', :scope => 'forem.admin.categories') %></th>
@@ -24,5 +24,5 @@
   </tbody>
 </table>
 
-<%= link_to t('forem.admin.forum.index'), forem.admin_forums_path %>
+<div class="btn"><%= link_to t('forem.admin.forum.index'), forem.admin_forums_path %></div>
 
