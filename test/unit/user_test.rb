@@ -25,5 +25,4 @@ class UserTest < ActiveSupport::TestCase
   	assert !user.save
    	assert !user.errors[:profile_name].empty?
   end
-
 end
