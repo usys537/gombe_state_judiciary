@@ -1,5 +1,7 @@
 Gombestatejudiciary::Application.routes.draw do
 
+  get "profiles/show"
+
   devise_for :users
 
   devise_scope :user do
@@ -10,7 +12,11 @@ Gombestatejudiciary::Application.routes.draw do
 
   mount Forem::Engine, :at => "/forums"
   root to: 'home#index'
-  get 'pages/about-us' => 'high_voltage/pages#show', :id => 'about-us'
+  get 'pages/about-us' => 'high_voltage/pages#show', :id => 'about-us'  
+  get '/photos' => 'photo_albums#index'
+  get '/photos/:id' => 'photo_albums#show'
+  get '/:id', to: 'profiles#show'
+
 
   
   resources :users 
