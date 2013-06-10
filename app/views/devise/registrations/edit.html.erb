@@ -1,7 +1,7 @@
 
 <div class="row">
   <div class="span4">
-    <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }, html: { class: "well"} ) do |f| %>
+    <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }, html: { multipart: true }, html: { class: "well"} ) do |f| %>
       <%= devise_error_messages! %>
 
       <fieldset>
@@ -10,7 +10,24 @@
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
+      </fieldset>
+
+      <fieldset>
+        <legend>Profile Picture</legend>
+        <%= f.file_field :avatar %>
+        <% if @user.avatar? %>
+        <div class="control-group">
+          <label class="control-label">Current Avatar</label>
+          <div class="control">
+            <%= image_tag @user.avatar.url(:thumb) %>
+          </div>
+        </div>
         
+        <% end %>
+      </fieldset>
+
+      <fieldset>
+        <legend>Update password</legend>        
         <%= f.input :password, hint: 'leave blank if you dont want to change it' %>
         <%= f.input :password_confirmation, hint: 'we need your current password to confirm your changes' %>
         <%= f.input :current_password %>

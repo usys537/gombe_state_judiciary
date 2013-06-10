@@ -1,1 +1,9 @@
-<p>Usman Shamaki</p>
+<div class="page-header">
+	<h1><%= @user.full_name %></h1>
+	<div class="control-group">
+          <label class="control-label">Current Profile Picture (only for forum)</label>
+          <div class="control">
+            <%= image_tag @user.avatar.url(:medium) %>
+          </div>
+    </div>	
+</div>
