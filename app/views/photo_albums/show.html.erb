@@ -18,10 +18,19 @@
   <p><%= link_to 'Back to Albums', photo_albums_path %>
 <% end %>
 
-<div id="spud_photo_galleries">
+<fieldset>
   <% @photo_album.photos.each do |photo| %>
-    <div class="spud_photo_album_thumbnail">
-      <%= link_to image_tag(photo.photo.url(:small), :alt => photo.caption, :title => photo.title), photo.photo.url(:large) %>
-    </div>
-  <% end %>
-</div>
+  <ul class="thumbnails">    
+      <div class="span">
+        <div class="thumbnail">
+          <%= link_to image_tag(photo.photo.url(:large), :alt => photo.caption, :title => photo.title), photo.photo.url(:large) %>
+        </div>
+      </div>
+    <% end %>
+  </ul>
+</fieldset>
+
+
+
+
+

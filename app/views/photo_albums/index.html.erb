@@ -14,13 +14,18 @@
 
 <ul class="thumbnails">
   <% @photo_albums.each do |album| %>
-    <l1 class="span4">
+    <div class="span">
       <div class="thumbnail">
-        <h3>
-          <%= link_to album.title, (@photo_gallery ? photo_gallery_photo_album_path(@photo_gallery.url_name, album.url_name) : photo_album_path(album.url_name)) %>
-        </h3>
+        <legend>
+          <h3>
+            <%= link_to album.title, (@photo_gallery ? photo_gallery_photo_album_path(@photo_gallery.url_name, album.url_name) : photo_album_path(album.url_name)) %>
+          </h3>
+        </legend>        
         <%= image_tag album.top_photo_url(:medium), :title => album.title %>
+        <div class="caption">
+          <h3>More Pictures inside album</h3>
+        </div>
       </div>
-    </li>
+    </div>
   <% end %>
 </ul>
