@@ -1,10 +1,10 @@
 require 'test_helper'
 
-class UsersControllerTest < ActionController::TestCase
+class ProfilesControllerTest < ActionController::TestCase
   test "should get show" do
     get :show, id: users(:usman).profile_name
     assert_response :success
-    assert_template 'users/show'
+    assert_template 'profiles/show'
   end
 
   test "should render a 404 on profile not found" do
