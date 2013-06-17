@@ -1,17 +1,17 @@
 <% provide(:title, 'Index') %>
 <div class="hero-unit">
-	<h1>Gombe State Judiciary</h1>
+	<h1>Welcome</h1>
 	<p>This is the website of Gombe state Judiciary</p>
 	<p>
-		<a href="#" class="btn btn-primary btn-large">Contact Us >></a>
+		<%= link_to "Contact Us", main_app.page_path("contact"), class: "btn btn-success btn-large" %>
 	</p>
 </div>
 <div class="row">
 	<div class="span4">
-		<h2>Training</h2>
-		<p>For Details training information</p>
+		<h2>Documents</h2>
+		<p>All Forms and Documents can be downloaded here</p>
 		<p>
-			<a class="btn" href="#">View details >></a>
+			<%= link_to "look inside", main_app.page_path("you-and-the-judiciary/forms"), class: "btn" %>
 		</p>
 	</div>
 	<div class="span4">
